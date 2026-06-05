@@ -51,6 +51,19 @@ embedded-monitor-agent/
 ├── Dockerfile
 └── README.md
 
+## Out Put 
+programing running screenshot
+<img width="724" height="386" alt="image" src="https://github.com/user-attachments/assets/a5c49ed4-3640-446a-bd2d-06e342f644ed" />
+
+monitor.log file screenshot
+<img width="751" height="723" alt="image" src="https://github.com/user-attachments/assets/d75d6d72-54dd-41d4-b116-c293ae01656e" />
+
+
+aws s3 screenshot
+<img width="1910" height="687" alt="image" src="https://github.com/user-attachments/assets/93025acb-c56b-431c-aef0-14ff4262e44e" />
+
+Docker running screenshot
+<img width="802" height="837" alt="image" src="https://github.com/user-attachments/assets/aab8a936-ed01-4f54-9386-f46cb242237a" />
 
 ---
 
@@ -96,7 +109,7 @@ IoT monitoring devices
 Edge computing systems
 Industrial control systems
 Network routers and embedded gateways
-👩‍💻 Author
+
 
 Raksha M Chanekar
 Pune, India
