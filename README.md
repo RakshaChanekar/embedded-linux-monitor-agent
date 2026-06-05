@@ -34,29 +34,45 @@ The agent simulates real-world embedded device behavior such as IoT gateways, ro
 
 ## 🧠 System Architecture
 
-
-+------------------------+
-| Embedded Linux System |
-+------------------------+
-|
-v
-+------------------------+
-| C++ Monitoring Agent |
-| (CPU, RAM, Disk) |
-+------------------------+
-|
-v
-+------------------------+
-| monitor.log file |
-+------------------------+
-|
-v
-+------------------------+
-| Bash Script Upload |
-| (AWS S3 Integration) |
-+------------------------+
-
-
+                +----------------------+
+                |   User / Admin       |
+                | (Runs / Views Logs)  |
+                +----------+-----------+
+                           |
+                           v
+        +--------------------------------------+
+        | Embedded Linux Monitoring System     |
+        | (C++ Application - monitor.cpp)     |
+        +------------------+-------------------+
+                           |
+     +---------------------+---------------------+
+     |                     |                     |
+     v                     v                     v
++-----------+       +-------------+       +-------------+
+| CPU Stats |       | RAM Stats   |       | Disk Stats  |
+| /proc/stat|       | /proc/mem   |       | statvfs()   |
++-----------+       +-------------+       +-------------+
+     \                     |                     /
+      \____________________|___________________/
+                           |
+                           v
+                 +-------------------+
+                 | monitor.log file  |
+                 +-------------------+
+                           |
+        +------------------+------------------+
+        |                                     |
+        v                                     v
++---------------------+            +----------------------+
+| Bash Automation     |            | Docker Container     |
+| upload_logs.sh      |            | Embedded Runtime     |
++---------------------+            +----------------------+
+        |
+        v
++----------------------+
+| AWS S3 Bucket        |
+| (Log Storage Cloud)  |
++----------------------+
 ---
 
 ## 📂 Project Structure
